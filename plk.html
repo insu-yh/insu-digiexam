@@ -3,26 +3,29 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>KAV & PLV 2025 – Regler & Standarder</title>
+<title>PLK 2025 – Regler & Standarder</title>
 <style>
-  @font-face{font-family:"Circular Pro";src:url("fonts/CircularPro-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
-  @font-face{font-family:"Circular Pro";src:url("fonts/CircularPro-Black.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap}
-  :root{--insu-yellow:#EDC73C;--bg:rgba(237,199,60,.5);--ink:#1E1E1E;--muted:#3C3C3C;--card:#fff;--border:#E9E6DB}
+  @font-face{font-family:"CircularPro";src:url("fonts/CircularPro-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+  @font-face{font-family:"CircularPro";src:url("fonts/CircularPro-Black.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap}
+
+  :root{--insu-yellow:#EDC73C;--bg:rgba(237,199,60,.5);--ink:#1E1E1E;--border:#E9E6DB}
   html,body{margin:0}
-  body{font:16px/1.5 "Circular Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
-  .frame{max-width:1100px;margin:0 auto;background:#fff;min-height:100vh;border-left:8px solid var(--insu-yellow);border-right:8px solid var(--insu-yellow);box-shadow:0 10px 30px rgba(0,0,0,.06)}
-  header{text-align:center;padding:18px 20px 0}
+  body{background:var(--bg);color:var(--ink);font:16px/1.5 "CircularPro",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+  .frame{max-width:1100px;margin:0 auto;min-height:100vh;background:#fff;border-left:8px solid var(--insu-yellow);border-right:8px solid var(--insu-yellow);box-shadow:0 10px 30px rgba(0,0,0,.06)}
+  header{text-align:center;padding:20px}
   .logo{height:50px}
-  .wave{display:block;height:14px;margin:10px auto 14px}
-  h1{font-weight:800;font-size:clamp(22px,3vw,28px);margin:0 0 6px}
-  .sub{font-weight:500;color:#444;margin:0 0 6px}
-  .hero{width:100%;max-width:860px;margin:10px auto;border-radius:6px;display:block}
-  main{max-width:860px;margin:10px auto 40px;padding:0 20px}
-  ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:14px}
+  .wave-mini{height:14px;display:block;margin:10px auto}
+  .wave-full{width:100%;height:auto;display:block;margin:18px 0}
+  h1{font-weight:800;font-size:clamp(22px,3vw,28px);margin:6px 0 4px}
+  .sub{font-weight:500;color:#444;margin:0 0 12px}
+  .hero{width:100%;max-width:880px;margin:0 auto 6px;display:block;border-radius:6px}
+
+  main{max-width:880px;margin:0 auto 40px;padding:0 20px}
+  ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
   @media(min-width:880px){ul{grid-template-columns:1fr 1fr}}
   .doc{background:#fff;border:1px solid var(--border);border-radius:8px;padding:14px 16px}
-  .doc a{color:#0A66C2;text-decoration:none;font-weight:600}
-  .doc a:hover{color:#063e78}
+  .doc a{color:#A98200;text-decoration:none;font-weight:700}
+  .doc a:hover{color:#7a6000}
   .back{display:inline-block;margin:18px 0 26px;color:#444;text-decoration:none}
   .back:hover{color:#000}
 </style>
@@ -30,15 +33,15 @@
 <body>
   <div class="frame">
     <header>
-      <img class="logo" src="YH-logo.png" alt="INSU Yrkeshögskola" />
-      <img class="wave" src="Vagen_mini.png" alt="" />
+      <img class="logo" src="YH-logo.png" alt="INSU Yrkeshögskola">
+      <img class="wave-mini" src="Vagen_mini.png" alt="">
       <h1>Regler &amp; Standarder</h1>
-      <p class="sub">KAV &amp; PLV 2025 – godkända hjälpmedel</p>
-      <img class="hero" src="RoS_KavPlv.png" alt="" />
+      <p class="sub">PLK 2025 – godkända hjälpmedel</p>
+      <img class="hero" src="Ros_PLK.png" alt="">
+      <img class="wave-full" src="Vagen_lang.png" alt="">
     </header>
 
     <main>
-      <!-- Byt HREF till dina riktiga PDF-länkar -->
       <ul>
         <li class="doc"><a href="https://www.insu.se/wp-content/uploads/2025/11/fil1.pdf" target="_blank" rel="noopener">Dokument 1 (PDF)</a></li>
         <li class="doc"><a href="https://www.insu.se/wp-content/uploads/2025/11/fil2.pdf" target="_blank" rel="noopener">Dokument 2 (PDF)</a></li>
@@ -48,6 +51,7 @@
         <li class="doc"><a href="https://www.insu.se/wp-content/uploads/2025/11/fil6.pdf" target="_blank" rel="noopener">Dokument 6 (PDF)</a></li>
       </ul>
 
+      <img class="wave-full" src="Vagen_lang.png" alt="">
       <a class="back" href="mtr-resurser.html">← Tillbaka</a>
     </main>
   </div>
