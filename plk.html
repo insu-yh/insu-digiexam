@@ -3,129 +3,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Regler & Standarder – PLK 2025</title>
+  <title>Regler & Standarder – PLK 2025 | INSU</title>
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
   <style>
+    :root {
+      --insu-yellow: #edc73c;
+    }
+
+    @font-face {
+      font-family: "CircularPro Medium";
+      src: url("fonts/CircularPro-Medium.woff2") format("woff2"),
+           url("fonts/CircularPro-Medium.woff") format("woff");
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "CircularPro Black";
+      src: url("fonts/CircularPro-Black.woff2") format("woff2"),
+           url("fonts/CircularPro-Black.woff") format("woff");
+      font-weight: 700;
+      font-style: normal;
+    }
+
     body {
-      font-family: 'Circular Pro Medium', 'Inter', sans-serif;
-      background-color: #fdfcf5;
-      color: #000;
+      font-family: "CircularPro Medium", sans-serif;
       margin: 0;
-      padding: 0;
+      background: #fffef8;
+      color: #000;
     }
 
-    .logo {
-      display: block;
-      margin: 20px auto;
-      width: 120px;
+    /* --- Header och logotyp --- */
+    .insu-header {
+      text-align: center;
+      padding: 25px 0 10px;
     }
 
+    .insu-header img {
+      height: 60px;
+    }
+
+    /* --- Banner --- */
     .banner {
-      position: relative;
-      background-image: url('Ros_PLK.png');
+      background-image: url("Ros_PLK.png");
       background-size: cover;
       background-position: center;
-      height: 220px;
+      height: 200px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      text-align: center;
-      color: #fff;
+      justify-content: center;
+      border-radius: 0 0 8px 8px;
+      position: relative;
       overflow: hidden;
     }
 
-    .banner::before {
+    .banner::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(237, 199, 60, 0.5); /* gul overlay 50% */
-      z-index: 0;
+      inset: 0;
+      background: rgba(237, 199, 60, 0.5); /* gul overlay, 50% */
     }
 
-    .banner h1,
-    .banner p {
+    .banner-content {
       position: relative;
+      text-align: center;
+      color: #fff;
       z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: "CircularPro Medium", sans-serif;
     }
 
     .banner h1 {
-      font-family: 'Circular Pro Bold', sans-serif;
-      font-size: 1.8em;
-      margin: 0;
+      font-family: "CircularPro Black", sans-serif;
+      font-size: 1.9rem;
+      margin-bottom: 8px;
     }
 
     .banner p {
-      font-size: 1em;
-      margin-top: 8px;
+      font-size: 1rem;
+      margin: 0;
+      opacity: 0.95;
     }
 
-    .content {
+    /* --- Huvudinnehåll --- */
+    main {
       max-width: 800px;
       margin: 40px auto;
       padding: 0 20px;
     }
 
-    h2 {
-      font-family: 'Circular Pro Bold', sans-serif;
-    }
-
-    ul {
+    .pdf-list ul {
       list-style: none;
       padding: 0;
+      margin-top: 30px;
     }
 
-    li {
-      background-color: #fff8e1;
-      border-left: 4px solid #edc73c;
-      padding: 12px 16px;
-      margin-bottom: 10px;
-      border-radius: 5px;
+    .pdf-list li {
+      margin-bottom: 14px;
     }
 
-    a {
+    .pdf-list a {
+      display: block;
+      padding: 12px 18px;
+      background: #fff8dc;
+      border-left: 4px solid var(--insu-yellow);
       text-decoration: none;
       color: #000;
-      font-weight: 600;
+      font-family: "CircularPro Medium", sans-serif;
+      border-radius: 4px;
+      transition: all 0.2s ease;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .pdf-list a:hover {
+      background: var(--insu-yellow);
+      color: #000;
     }
 
+    /* --- Navigering & footer --- */
     .back-link {
-      margin: 20px;
       display: inline-block;
-      color: #000;
+      margin: 10px 20px;
       text-decoration: none;
-      font-size: 0.95em;
+      color: #000;
+      font-size: 0.95rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
     }
 
     .back-link:hover {
-      text-decoration: underline;
+      border-color: #000;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 20px;
+      color: #555;
     }
   </style>
 </head>
 <body>
- 
-  <img src="YH-logo.png" alt="INSU Yrkeshögskola" class="logo">
 
-  <div class="banner">
-    <h1>Regler & Standarder – PLK 2025</h1>
-    <p>Här hittar du det godkända materialet som är tillåtet under din digitala tentamen.</p>
+  <!-- INSU logga -->
+  <div class="insu-header">
+    <img src="YH-logo.png" alt="INSU Yrkeshögskola logotyp">
   </div>
 
-  <div class="content">
-    <h2>Godkänt material</h2>
+  <!-- Banner med gul overlay -->
+  <header class="banner">
+    <div class="banner-content">
+      <h1>10/11 - 2025 - Regler &amp; Standarder – PLK 2025</h1>
+      <p>Här hittar du det godkända materialet som är tillåtet under din digitala tentamen.</p>
+    </div>
+  </header>
+
+  <!-- Lista med PDF-filer -->
+ <h2>Godkänt material</h2>
     <ul>
       <li><a href="pdf/plk/HD%20mal%20B153-04.pdf" target="_blank" rel="noopener">HD mall B153-04 (PDF)</a></li>
       <li><a href="pdf/plk/Regelsamling%20till%20tentamen.pdf" target="_blank" rel="noopener">Regelsamling till tentamen (PDF)</a></li>
     </ul>
-  </div>
+  </main>
 
     <a href="mtr-resurser.html" class="back-link">⬅ Tillbaka till materialöversikt</a>
 
@@ -135,4 +174,6 @@
 
 </body>
 </html>
+
+
 
