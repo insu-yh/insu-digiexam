@@ -3,94 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PLK – Regler & Standarder | INSU</title>
+  <title>Regler & Standarder – PLK 2025</title>
   <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
   <style>
-    :root { --insu-yellow:#EDC73C; }
-
-    /* Bas */
-    html,body{margin:0}
-    body{background:#fffef8;color:#000;font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-
-    /* Topp – logga */
-    .insu-header{ text-align:center; padding:24px 0 10px; }
-    .insu-header img{ height:60px; }
-
-    /* Tillbaka-länk */
-    .back{ display:inline-block; margin:6px 20px 10px; text-decoration:none; color:#000; border-bottom:1px solid transparent; }
-    .back:hover{ border-color:#000; }
-
-    /* Smal banner med gul overlay */
-    .banner{
-      position:relative;
-      height:200px;
-      border-radius:0 0 8px 8px;
-      overflow:hidden;
-      display:flex; align-items:center; justify-content:center;
-      background:#ddd;
+    body {
+      font-family: 'Circular Pro Medium', 'Inter', sans-serif;
+      background-color: #fdfcf5;
+      color: #000;
+      margin: 0;
+      padding: 0;
     }
-    .banner::before{
-      content:"";
-      position:absolute; inset:0;
-      background-image:url("RoS_PLK.png");
-      background-size:cover; background-position:center;
-      z-index:0;
-    }
-    .banner::after{
-      content:"";
-      position:absolute; inset:0;
-      background:rgba(237,199,60,0.5);
-      z-index:1;
-    }
-    .banner-content{
-      position:relative; z-index:2; text-align:center; color:#fff;
-      padding:0 16px; max-width:900px;
-    }
-    .banner h1{ margin:0 0 6px; font-weight:800; font-size:1.9rem; }
-    .banner p{ margin:0; opacity:.95; }
 
-    /* Innehåll */
-    main{ max-width:900px; margin:34px auto; padding:0 20px; }
-    h2{ font-size:1.2rem; margin:0 0 14px; }
-
-    .pdf-list ul{ list-style:none; padding:0; margin:0; }
-    .pdf-list li{ margin:0 0 14px; }
-    .pdf-list a{
-      display:block; padding:12px 18px; text-decoration:none; color:#000;
-      background:#fff8dc; border-left:4px solid var(--insu-yellow); border-radius:4px;
-      transition:background .2s ease;
+    .logo {
+      display: block;
+      margin: 20px auto;
+      width: 120px;
     }
-    .pdf-list a:hover{ background:var(--insu-yellow); }
-    
-    footer{ text-align:center; font-size:.85rem; color:#555; padding:22px; }
+
+    .banner {
+      position: relative;
+      background-image: url('Ros_PLK.png');
+      background-size: cover;
+      background-position: center;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(237, 199, 60, 0.5); /* gul overlay 50% */
+      z-index: 0;
+    }
+
+    .banner h1,
+    .banner p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner h1 {
+      font-family: 'Circular Pro Bold', sans-serif;
+      font-size: 1.8em;
+      margin: 0;
+    }
+
+    .banner p {
+      font-size: 1em;
+      margin-top: 8px;
+    }
+
+    .content {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-family: 'Circular Pro Bold', sans-serif;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background-color: #fff8e1;
+      border-left: 4px solid #edc73c;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      margin: 20px;
+      display: inline-block;
+      color: #000;
+      text-decoration: none;
+      font-size: 0.95em;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
+  <a href="mtr-resurser.html" class="back-link">← Tillbaka till materialöversikt</a>
 
-  <!-- INSU logga -->
-  <div class="insu-header">
-    <img src="YH-logo.png" alt="INSU Yrkeshögskola">
+  <img src="YH-logo.png" alt="INSU Yrkeshögskola" class="logo">
+
+  <div class="banner">
+    <h1>Regler & Standarder – PLK 2025</h1>
+    <p>Här hittar du det godkända materialet som är tillåtet under din digitala tentamen.</p>
   </div>
 
-  <a class="back" href="mtr-resurser.html">⬅ Tillbaka till materialöversikt</a>
-
-  <!-- Banner med bild + 50% gul overlay -->
-  <header class="banner">
-    <div class="banner-content">
-      <h1>Regler &amp; Standarder – PLK 2025</h1>
-      <p>Här hittar du det godkända materialet som är tillåtet under din digitala tentamen.</p>
-    </div>
-  </header>
-
-  <main class="pdf-list">
+  <div class="content">
     <h2>Godkänt material</h2>
     <ul>
-      <li><a href="pdf/plk/HD-mal-B153-04.pdf" target="_blank">HD mall B153-04 (PDF)</a></li>
-      <li><a href="pdf/plk/Regelsamling-till-tentamen.pdf" target="_blank">Regelsamling till tentamen (PDF)</a></li>
+      <li><a href="pdf/plk/HD%20mal%20B153-04.pdf" target="_blank" rel="noopener">HD mall B153-04 (PDF)</a></li>
+      <li><a href="pdf/plk/Regelsamling%20till%20tentamen.pdf" target="_blank" rel="noopener">Regelsamling till tentamen (PDF)</a></li>
     </ul>
-  </main>
-
-  <footer>© 2025 INSU Yrkeshögskola – Digitalt tentamensmaterial</footer>
-
+  </div>
 </body>
 </html>
