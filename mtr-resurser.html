@@ -8,7 +8,6 @@
   <style>
     :root { --insu-yellow:#EDC73C; }
 
-    /* Typsnitt (lokalt) */
     @font-face{
       font-family:"CircularPro Medium";
       src:url("fonts/CircularPro-Medium.woff2") format("woff2"),
@@ -22,89 +21,92 @@
       font-weight:700; font-style:normal; font-display:swap;
     }
 
-    /* Bas */
     html,body{margin:0}
     body{
       background:#fffef8; color:#000;
-      font:16px/1.5 "CircularPro Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+      font:16px/1.6 "CircularPro Medium",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
     }
 
-    /* Topp – logga */
-    .insu-header{ text-align:center; padding:24px 0 10px; }
-    .insu-header img{ height:60px; }
+    /* Logga */
+    .insu-header{text-align:center;padding:24px 0 10px;}
+    .insu-header img{height:60px;}
 
-    /* Banner (samma stil som undersidorna) */
+    /* Banner */
     .banner{
-      position:relative; height:200px; border-radius:0 0 8px 8px;
-      overflow:hidden; display:flex; align-items:center; justify-content:center;
+      position:relative;height:200px;border-radius:0 0 8px 8px;
+      overflow:hidden;display:flex;align-items:center;justify-content:center;
       background:#ddd;
     }
     .banner::before{
-      content:""; position:absolute; inset:0;
-      background-image:url("Splash_Banner.png");   /* <-- BYT TILL DIN BILD */
-      background-size:cover; background-position:center; z-index:0;
+      content:"";position:absolute;inset:0;
+      background-image:url("Splash_Banner.png"); /* ← BYT till din bannerbild */
+      background-size:cover;background-position:center;z-index:0;
     }
     .banner::after{
-      content:""; position:absolute; inset:0;
-      background:rgba(237,199,60,0.5); z-index:1;  /* 50% gul overlay */
+      content:"";position:absolute;inset:0;
+      background:rgba(237,199,60,0.5);z-index:1;
     }
     .banner-content{
-      position:relative; z-index:2; text-align:center; color:#fff;
-      padding:0 16px; max-width:900px;
+      position:relative;z-index:2;text-align:center;color:#fff;
+      padding:0 16px;max-width:900px;
     }
     .banner h1{
-      margin:0 0 6px; font-family:"CircularPro Black",sans-serif; font-size:1.9rem;
+      margin:0 0 6px;
+      font-family:"CircularPro Black",sans-serif;
+      font-size:1.9rem;
     }
-    .banner p{ margin:0; opacity:.95; }
+    .banner p{margin:0;opacity:.95;}
 
-    /* Grid med kurskort (matchar tidigare fixar) */
-    .grid{
-      max-width:900px; margin:34px auto; padding:0 20px;
-      display:grid; gap:28px; grid-template-columns:1fr;
+    /* Info-text under banner */
+    .intro{
+      max-width:850px;margin:40px auto 10px;padding:0 20px;text-align:left;
+      font-size:1rem;line-height:1.7;color:#111;
     }
-    @media(min-width:900px){ .grid{ grid-template-columns:1fr 1fr; } }
+    .intro p{margin-bottom:18px;}
+
+    .wave-mini{display:block;width:160px;height:auto;margin:20px auto 30px;}
+
+    /* Grid med kurskort */
+    .grid{
+      max-width:900px;margin:0 auto 50px;padding:0 20px;
+      display:grid;gap:28px;grid-template-columns:1fr;
+    }
+    @media(min-width:900px){.grid{grid-template-columns:1fr 1fr;}}
 
     .card{
-      position:relative; overflow:hidden; border:none; background:#fff;
-      border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,.08);
+      position:relative;overflow:hidden;border:none;background:#fff;
+      border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.08);
       transition:box-shadow .3s ease;
     }
-    .card:hover{ box-shadow:0 4px 12px rgba(0,0,0,.15); }
-
-    .link{ display:block; color:inherit; text-decoration:none; }
-    .media{ position:relative; overflow:hidden; border-radius:6px 6px 0 0; }
-    .thumb{ display:block; width:100%; aspect-ratio:16/9; object-fit:cover;
-            transition:transform .3s ease, filter .3s ease; will-change:transform,filter; }
-
-    /* Gul overlay vid hover (75%) */
+    .card:hover{box-shadow:0 4px 12px rgba(0,0,0,.15);}
+    .link{display:block;color:inherit;text-decoration:none;}
+    .media{position:relative;overflow:hidden;border-radius:6px 6px 0 0;}
+    .thumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;
+           transition:transform .3s ease,filter .3s ease;will-change:transform,filter;}
     .media::before{
-      content:""; position:absolute; inset:0; z-index:1;
-      background:rgba(237,199,60,.75); opacity:0; transition:opacity .3s ease; pointer-events:none;
+      content:"";position:absolute;inset:0;z-index:1;
+      background:rgba(237,199,60,.75);opacity:0;transition:opacity .3s ease;
+      pointer-events:none;
     }
-    .card:hover .media::before{ opacity:1; }
-    .card:hover .thumb{ transform:scale(1.02); filter:brightness(.9); }
-
-    /* Text över bilden */
+    .card:hover .media::before{opacity:1;}
+    .card:hover .thumb{transform:scale(1.02);filter:brightness(.9);}
     .overlay{
-      position:absolute; left:24px; right:24px; bottom:22px; z-index:2;
-      color:#fff; text-shadow:0 2px 6px rgba(0,0,0,.35);
+      position:absolute;left:24px;right:24px;bottom:22px;z-index:2;
+      color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.35);
     }
-    .date{ font-family:"CircularPro Black"; font-size:18px; margin:0 0 2px; }
-    .title{ font-family:"CircularPro Black"; font-size:22px; margin:0 0 2px; }
-    .subtitle{ font-size:13px; margin:0; }
+    .date{font-family:"CircularPro Black";font-size:18px;margin:0 0 2px;}
+    .title{font-family:"CircularPro Black";font-size:22px;margin:0 0 2px;}
+    .subtitle{font-size:13px;margin:0;}
+    .underline{position:absolute;left:0;right:0;bottom:0;height:4px;
+               background:var(--insu-yellow);z-index:3;}
 
-    /* Underlinje sitter i media -> inga glipor */
-    .underline{ position:absolute; left:0; right:0; bottom:0; height:4px; background:var(--insu-yellow); z-index:3; }
-
-    /* Lång våg före footern */
-    .wave-full{ display:block; width:100%; height:auto; margin:18px 0 0; }
-
-    footer{ text-align:center; font-size:.85rem; color:#555; padding:22px; }
+    .wave-full{display:block;width:100%;height:auto;margin:30px 0 0;}
+    footer{text-align:center;font-size:.85rem;color:#555;padding:22px;}
   </style>
 </head>
 <body>
 
-  <!-- INSU logga -->
+  <!-- Logga -->
   <div class="insu-header">
     <img src="YH-logo.png" alt="INSU Yrkeshögskola">
   </div>
@@ -113,9 +115,19 @@
   <header class="banner">
     <div class="banner-content">
       <h1>Material för digital examen</h1>
-      <p>Välj din kurs för att öppna godkända PDF-hjälpmedel. Filmerna öppnas direkt i webbläsaren.</p>
+      <p>Välj din kurs för att öppna godkända PDF-hjälpmedel.</p>
     </div>
   </header>
+
+  <!-- Info-text -->
+  <section class="intro">
+    <p>Här hittar du det godkända kursmaterial som är tillåtet att använda under ditt digitala examinationstillfälle. Välj den kurs du läser för att öppna de PDF-filer som är godkända som hjälpmedel. Materialet öppnas direkt i webbläsaren och behöver inte laddas ner.</p>
+    <p>Observera att endast materialet på denna sida är tillåtet under din digitala examen. Annat kursmaterial eller externa hjälpmedel får inte användas.</p>
+    <p>Vid tekniska problem eller frågor under examinationen kan du skriva direkt i chatten i DigiExam för support.</p>
+  </section>
+
+  <!-- Liten våg för avskiljning -->
+  <img class="wave-mini" src="Vagen_mini.png" alt="Dekorativ våg">
 
   <!-- Kurskort -->
   <main class="grid">
@@ -150,13 +162,12 @@
       </a>
     </article>
 
-    <!-- Lägg fler kort här senare (kopiera ett article-block) -->
-
   </main>
 
-  <!-- Långa vågen längst ner -->
+  <!-- Långa vågen innan footer -->
   <img class="wave-full" src="Vagen_lang.png" alt="Dekorativ våg">
 
   <footer>© 2025 INSU Yrkeshögskola – Digitalt tentamensmaterial</footer>
+
 </body>
 </html>
