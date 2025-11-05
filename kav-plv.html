@@ -1,61 +1,166 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>KAV & PLV 2025 – Regler & Standarder</title>
-<style>
-  @font-face{font-family:"CircularPro";src:url("fonts/CircularPro-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
-  @font-face{font-family:"CircularPro";src:url("fonts/CircularPro-Black.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAV & PLV – Regler & Standarder | INSU</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    :root {
+      --insu-yellow: #edc73c;
+    }
 
-  :root{--insu-yellow:#EDC73C;--bg:rgba(237,199,60,.5);--ink:#1E1E1E;--border:#E9E6DB}
-  html,body{margin:0}
-  body{background:var(--bg);color:var(--ink);font:16px/1.5 "CircularPro",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-  .frame{max-width:1100px;margin:0 auto;min-height:100vh;background:#fff;border-left:8px solid var(--insu-yellow);border-right:8px solid var(--insu-yellow);box-shadow:0 10px 30px rgba(0,0,0,.06)}
-  header{text-align:center;padding:20px}
-  .logo{height:50px}
-  .wave-mini{height:14px;display:block;margin:10px auto}
-  .wave-full{width:100%;height:auto;display:block;margin:18px 0}
-  h1{font-weight:800;font-size:clamp(22px,3vw,28px);margin:6px 0 4px}
-  .sub{font-weight:500;color:#444;margin:0 0 12px}
-  .hero{width:100%;max-width:880px;margin:0 auto 6px;display:block;border-radius:6px}
+    @font-face {
+      font-family: "CircularPro Medium";
+      src: url("fonts/CircularPro-Medium.woff2") format("woff2"),
+           url("fonts/CircularPro-Medium.woff") format("woff");
+      font-weight: 500;
+      font-style: normal;
+    }
 
-  main{max-width:880px;margin:0 auto 40px;padding:0 20px}
-  ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-  @media(min-width:880px){ul{grid-template-columns:1fr 1fr}}
-  .doc{background:#fff;border:1px solid var(--border);border-radius:8px;padding:14px 16px}
-  .doc a{color:#A98200;text-decoration:none;font-weight:700}       /* gul ton */
-  .doc a:hover{color:#7a6000}
-  .back{display:inline-block;margin:18px 0 26px;color:#444;text-decoration:none}
-  .back:hover{color:#000}
-</style>
+    @font-face {
+      font-family: "CircularPro Black";
+      src: url("fonts/CircularPro-Black.woff2") format("woff2"),
+           url("fonts/CircularPro-Black.woff") format("woff");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    body {
+      font-family: "CircularPro Medium", sans-serif;
+      margin: 0;
+      background: #fffef8;
+      color: #000;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .banner {
+      background-image: url("Vagen_lang.png");
+      background-size: cover;
+      background-position: center;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0 0 8px 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .banner::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .banner-content {
+      position: relative;
+      text-align: center;
+      color: #000;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: "CircularPro Medium", sans-serif;
+    }
+
+    .banner h1 {
+      font-family: "CircularPro Black", sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .banner p {
+      font-size: 1rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .pdf-list ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 30px;
+    }
+
+    .pdf-list li {
+      margin-bottom: 14px;
+    }
+
+    .pdf-list a {
+      display: block;
+      padding: 12px 18px;
+      background: #fff8dc;
+      border-left: 4px solid var(--insu-yellow);
+      text-decoration: none;
+      color: #000;
+      font-family: "CircularPro Medium", sans-serif;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .pdf-list a:hover {
+      background: var(--insu-yellow);
+      color: #000;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 10px 20px;
+      text-decoration: none;
+      color: #000;
+      font-size: 0.95rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .back-link:hover {
+      border-color: #000;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 20px;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-  <div class="frame">
-    <header>
-      <img class="logo" src="YH-logo.png" alt="INSU Yrkeshögskola">
-      <img class="wave-mini" src="Vagen_mini.png" alt="">
-      <h1>Regler &amp; Standarder</h1>
-      <p class="sub">KAV &amp; PLV 2025 – godkända hjälpmedel</p>
-      <img class="hero" src="RoS_KavPlv.png" alt="">
-      <img class="wave-full" src="Vagen_lang.png" alt="">
-    </header>
 
-<main class="pdf-list">
-  <h2>Regler &amp; Standarder – KAV &amp; PLV 2025</h2>
-  <p>Nedan hittar du det godkända materialet som är tillåtet under tentamen för KAV & PLV.</p>
+  <a href="mtr-resurser.html" class="back-link">⬅ Tillbaka till materialöversikt</a>
 
-  <ul>
-    <li><a href="pdf/kavplv/BBR-kombinerad-MED-den-konsoliderade-kombinerad.pdf" target="_blank">BBR kombinerad med den konsoliderade (PDF)</a></li>
-    <li><a href="pdf/kavplv/Broschyr-Forenklad-tathetskontroll-med-luft-2021.pdf" target="_blank">Broschyr: Förenklad täthetskontroll med luft 2021 (PDF)</a></li>
-    <li><a href="pdf/kavplv/Foreskriften-Imkanal-2022.pdf" target="_blank">Föreskriften Imkanal 2022 (PDF)</a></li>
-    <li><a href="pdf/kavplv/Lathund-Imkanal-2022.pdf" target="_blank">Lathund Imkanal 2022 (PDF)</a></li>
-    <li><a href="pdf/kavplv/saker-vatten-byggtekniska-forutsattningar-2021-2.pdf" target="_blank">Säker Vatten – Byggtekniska förutsättningar 2021-2 (PDF)</a></li>
-    <li><a href="pdf/kavplv/saker-vatten-komprimerad.pdf" target="_blank">Säker Vatten – Komprimerad version (PDF)</a></li>
-  </ul>
-      <a class="back" href="mtr-resurser.html">← Tillbaka</a>
-    </main>
-  </div>
+  <header class="banner">
+    <div class="banner-content">
+      <h1>Regler &amp; Standarder – KAV &amp; PLV 2025</h1>
+      <p>Här hittar du det godkända materialet som är tillåtet under din digitala tentamen.</p>
+    </div>
+  </header>
+
+  <main class="pdf-list">
+    <h2>Godkänt material</h2>
+    <ul>
+      <li><a href="pdf/kavplv/BBR-kombinerad-MED-den-konsoliderade-kombinerad.pdf" target="_blank">BBR kombinerad med den konsoliderade (PDF)</a></li>
+      <li><a href="pdf/kavplv/Broschyr-Forenklad-tathetskontroll-med-luft-2021.pdf" target="_blank">Broschyr: Förenklad täthetskontroll med luft 2021 (PDF)</a></li>
+      <li><a href="pdf/kavplv/Foreskriften-Imkanal-2022.pdf" target="_blank">Föreskriften Imkanal 2022 (PDF)</a></li>
+      <li><a href="pdf/kavplv/Lathund-Imkanal-2022.pdf" target="_blank">Lathund Imkanal 2022 (PDF)</a></li>
+      <li><a href="pdf/kavplv/saker-vatten-byggtekniska-forutsattningar-2021-2.pdf" target="_blank">Säker Vatten – Byggtekniska förutsättningar 2021-2 (PDF)</a></li>
+      <li><a href="pdf/kavplv/saker-vatten-komprimerad.pdf" target="_blank">Säker Vatten – Komprimerad version (PDF)</a></li>
+    </ul>
+  </main>
+
+  <footer>
+    © 2025 INSU Yrkeshögskola – Digitalt tentamensmaterial
+  </footer>
+
 </body>
 </html>
-
