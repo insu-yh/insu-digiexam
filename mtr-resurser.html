@@ -70,27 +70,18 @@
   }
   @media(min-width:900px){ .grid{grid-template-columns:1fr 1fr;} }
 
-  .card{
-    background:#fff; border:1px solid var(--border); border-radius:6px; overflow:hidden;
-  }
+  .card {
+  position: relative;
+  overflow: hidden;
+  border: none; /* tar bort tunna linjen */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* mjuk skugga istället */
+  border-radius: 6px;
+  transition: box-shadow 0.3s ease;
+}
 
-  /* Media-wrap så overlay bara täcker bilden (inte hela kortet) */
-  .media{ position:relative; }
-  .thumb{
-    display:block; width:100%; aspect-ratio:16/9; object-fit:cover;
-    transition:transform .3s ease, filter .3s ease;
-  }
-
-  /* Gul overlay på hover (75%) */
-  .media::before{
-    content:""; position:absolute; inset:0;
-    background:rgba(237,199,60,.75); /* #EDC73C @ 75% */
-    opacity:0; transition:opacity .3s ease; pointer-events:none;
-    z-index:1;
-  }
-  .card:hover .media::before{ opacity:1; }
-  .card:hover .thumb{ transform:scale(1.02); filter:brightness(.9); }
-
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* lite djupare vid hover */
+}
   /* Överlagrad text över bilden */
   .overlay{
     position:absolute; left:24px; right:24px; bottom:22px;
@@ -165,3 +156,4 @@
   </div>
 </body>
 </html>
+
