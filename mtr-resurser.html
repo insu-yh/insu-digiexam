@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hjälpmedel till Tentamen</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: #f4f4f9;
             color: #333;
             margin: 0;
@@ -17,7 +18,17 @@
             color: #2c3e50;
             margin-bottom: 30px;
         }
-        ul {
+        .section {
+            margin-bottom: 40px;
+        }
+        .section img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .section ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
@@ -25,7 +36,7 @@
             flex-direction: column;
             align-items: center;
         }
-        li {
+        .section li {
             background-color: #fff;
             border: 1px solid #ddd;
             margin: 10px;
@@ -35,27 +46,42 @@
             max-width: 400px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        li a {
+        .section li a {
             text-decoration: none;
             color: #3498db;
             font-size: 18px;
             font-weight: bold;
             display: block;
         }
-        li a:hover {
+        .section li a:hover {
             color: #2c3e50;
         }
     </style>
 </head>
 <body>
-    <h2>Hjälpmedel till tentamen</h2>
-    <ul>
-        <li><a href="https://www.insu.se/wp-content/uploads/2025/11/fil1.pdf">Dokument 1</a></li>
-        <li><a href="https://www.insu.se/wp-content/uploads/2025/11/fil2.pdf">Dokument 2</a></li>
-        <li><a href="https://www.insu.se/wp-content/uploads/2025/11/fil3.pdf">Dokument 3</a></li>
-        <li><a href="https://www.insu.se/wp-content/uploads/2025/11/fil4.pdf">Dokument 4</a></li>
-        <li><a href="https://www.insu.se/wp-content/uploads/2025/11/fil5.pdf">Dokument 5</a></li>
-        <li><a href="https://www.insu.se/wp-content/uploads/2025/11/fil6.pdf">Dokument 6</a></li>
-    </ul>
+    <h2>Hjälpmedel till Tentamen</h2>
+
+    <!-- Ros-tentan -->
+    <div class="section">
+        <img src="ros-tenta-bild.jpg" alt="Ros Tentamen">
+        <h3>Ros-tentan</h3>
+        <ul>
+            <li><a href="https://www.insu.se/wp-content/uploads/2025/11/ros-tenta1.pdf">Ros Tenta 1</a></li>
+            <li><a href="https://www.insu.se/wp-content/uploads/2025/11/ros-tenta2.pdf">Ros Tenta 2</a></li>
+            <li><a href="https://www.insu.se/wp-content/uploads/2025/11/ros-tenta3.pdf">Ros Tenta 3</a></li>
+        </ul>
+    </div>
+
+    <!-- Placeholder -->
+    <div class="section">
+        <img src="placeholder-bild.jpg" alt="Placeholder">
+        <h3>Placeholder</h3>
+        <ul>
+            <li><a href="https://www.insu.se/wp-content/uploads/2025/11/placeholder1.pdf">Placeholder 1</a></li>
+            <li><a href="https://www.insu.se/wp-content/uploads/2025/11/placeholder2.pdf">Placeholder 2</a></li>
+            <li><a href="https://www.insu.se/wp-content/uploads/2025/11/placeholder3.pdf">Placeholder 3</a></li>
+        </ul>
+    </div>
+
 </body>
 </html>
