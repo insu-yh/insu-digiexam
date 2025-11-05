@@ -4,23 +4,31 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Material för digital examen – INSU</title>
+
+<link rel="icon" href="favicon.png" type="image/png" />
 <style>
-  /* Webfonts (lokala) */
+  /* ========= Webfonts (lokala) ========= */
   @font-face{
     font-family:"CircularPro";
-    src:url("fonts/CircularPro-Medium.woff2") format("woff2");
-    font-weight:500;font-style:normal;font-display:swap;
+    src:
+      url("fonts/CircularPro-Medium.woff2") format("woff2"),
+      url("fonts/CircularPro-Medium.otf") format("opentype");
+    font-weight:500; font-style:normal; font-display:swap;
   }
   @font-face{
     font-family:"CircularPro";
-    src:url("fonts/CircularPro-Black.woff2") format("woff2");
-    font-weight:800;font-style:normal;font-display:swap;
+    src:
+      url("fonts/CircularPro-Black.woff2") format("woff2"),
+      url("fonts/CircularPro-Black.otf") format("opentype");
+    font-weight:800; font-style:normal; font-display:swap;
   }
 
   :root{
     --insu-yellow:#EDC73C;
-    --bg: rgba(237,199,60,.5); /* 50% opacitet */
-    --ink:#1E1E1E; --muted:#3C3C3C; --border:#E9E6DB;
+    --bg: rgba(237,199,60,.5); /* 50% av #EDC73C */
+    --ink:#1E1E1E;
+    --muted:#3C3C3C;
+    --border:#E9E6DB;
   }
 
   /* Bas */
@@ -33,78 +41,102 @@
 
   /* Inramning */
   .frame{
-    max-width:1100px;margin:0 auto;min-height:100vh;background:#fff;
+    max-width:1100px; margin:0 auto; min-height:100vh; background:#fff;
     border-left:8px solid var(--insu-yellow);
     border-right:8px solid var(--insu-yellow);
     box-shadow:0 10px 30px rgba(0,0,0,.06);
   }
 
-  header{padding:20px 20px 0;text-align:center}
+  /* Header */
+  header{padding:20px 20px 0; text-align:center}
   .logo{height:56px}
-  .wave-mini{height:14px;display:block;margin:12px auto 14px}
-  .wave-full{width:100%;height:auto;display:block;margin:18px 0}
+  .wave-mini{height:14px; display:block; margin:12px auto 14px}
+  .wave-full{width:100%; height:auto; display:block; margin:18px 0}
 
   h1{
     font-weight:800;
     font-size:clamp(22px,3.2vw,30px);
     margin:6px 0 10px;
   }
-  .ingress{max-width:880px;margin:0 auto;text-align:center}
+  .ingress{max-width:880px; margin:0 auto; text-align:center}
   .ingress p{margin:0 0 10px}
   .ingress .note{color:#444}
 
-  /* Kort */
+  /* Grid med kort */
   .grid{
-    display:grid;gap:28px;
+    display:grid; gap:28px;
     grid-template-columns:1fr;
-    max-width:880px;margin:0 auto 40px;padding:0 20px;
+    max-width:880px; margin:0 auto 40px; padding:0 20px;
   }
   @media(min-width:900px){ .grid{grid-template-columns:1fr 1fr;} }
 
-  .card{background:#fff;border:1px solid var(--border);border-radius:6px;overflow:hidden;position:relative}
-  .thumb{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
-
-  .overlay{
-    position:absolute;left:24px;bottom:30px;right:24px;color:#fff;
-    text-shadow:0 2px 6px rgba(0,0,0,.35);
-    pointer-events:none;
+  .card{
+    background:#fff; border:1px solid var(--border); border-radius:6px; overflow:hidden;
   }
-  .date{font-weight:800;font-size:18px;margin:0 0 2px}
-  .title{font-weight:800;font-size:22px;margin:0 0 2px}
-  .subtitle{font-weight:500;font-size:13px;margin:0}
 
-  .underline{height:4px;background:var(--insu-yellow);width:100%;}
+  /* Media-wrap så overlay bara täcker bilden (inte hela kortet) */
+  .media{ position:relative; }
+  .thumb{
+    display:block; width:100%; aspect-ratio:16/9; object-fit:cover;
+    transition:transform .3s ease, filter .3s ease;
+  }
+
+  /* Gul overlay på hover (75%) */
+  .media::before{
+    content:""; position:absolute; inset:0;
+    background:rgba(237,199,60,.75); /* #EDC73C @ 75% */
+    opacity:0; transition:opacity .3s ease; pointer-events:none;
+    z-index:1;
+  }
+  .card:hover .media::before{ opacity:1; }
+  .card:hover .thumb{ transform:scale(1.02); filter:brightness(.9); }
+
+  /* Överlagrad text över bilden */
+  .overlay{
+    position:absolute; left:24px; right:24px; bottom:22px;
+    color:#fff; text-shadow:0 2px 6px rgba(0,0,0,.35);
+    z-index:2; pointer-events:none;
+  }
+  .date{ font-weight:800; font-size:18px; margin:0 0 2px; letter-spacing:.3px; }
+  .title{ font-weight:800; font-size:22px; margin:0 0 2px; }
+  .subtitle{ font-weight:500; font-size:13px; margin:0; }
+
+  .underline{ height:4px; background:var(--insu-yellow); width:100%; }
 
   /* Klickyta */
-  .link{display:block;color:inherit;text-decoration:none}
-  .link:focus-visible{outline:3px solid var(--insu-yellow);outline-offset:3px}
+  .link{ display:block; color:inherit; text-decoration:none; }
+  .link:focus-visible{ outline:3px solid var(--insu-yellow); outline-offset:3px; }
 
-  footer{padding:20px;text-align:center;}
+  /* Footer (utan grå linje) */
+  footer{ padding:20px; text-align:center; color:#444; }
 </style>
 </head>
 <body>
   <div class="frame">
     <header>
-      <img class="logo" src="YH-logo.png" alt="INSU Yrkeshögskola">
-      <img class="wave-mini" src="Vagen_mini.png" alt="">
+      <img class="logo" src="YH-logo.png" alt="INSU Yrkeshögskola" />
+      <img class="wave-mini" src="Vagen_mini.png" alt="" />
       <h1>Material för digital examen</h1>
       <div class="ingress">
         <p>Här hittar du det godkända kursmaterial som är tillåtet att använda under ditt digitala examinationstillfälle. Välj den kurs du läser för att öppna de PDF-filer som är godkända som hjälpmedel. Materialet öppnas direkt i webbläsaren och behöver inte laddas ner.</p>
         <p class="note"><strong>Observera</strong> att endast materialet på denna sida är tillåtet under din digitala examen. Annat kursmaterial eller externa hjälpmedel får inte användas.</p>
         <p class="note">Vid tekniska problem eller frågor under examinationen kan du skriva direkt i chatten i DigiExam för support.</p>
       </div>
-      <img class="wave-mini" src="Vagen_mini.png" alt="">
+      <img class="wave-mini" src="Vagen_mini.png" alt="" />
+      <!-- OBS: Vi har tagit bort långa vågen här enligt önskemål -->
     </header>
 
     <main class="grid">
       <!-- KAV & PLV -->
       <article class="card">
         <a class="link" href="kav-plv.html" aria-label="Öppna 7/11 Regler & Standarder – KAV & PLV 2025">
-          <img class="thumb" src="RoS_KavPlv.png" alt="">
-          <div class="overlay">
-            <div class="date">7/11</div>
-            <div class="title">Regler &amp; Standarder</div>
-            <div class="subtitle">KAV &amp; PLV 2025</div>
+          <div class="media">
+            <img class="thumb" src="RoS_KavPlv.png" alt="" />
+            <div class="overlay">
+              <div class="date">7/11</div>
+              <div class="title">Regler &amp; Standarder</div>
+              <div class="subtitle">KAV &amp; PLV 2025</div>
+            </div>
           </div>
           <div class="underline"></div>
         </a>
@@ -113,20 +145,23 @@
       <!-- PLK -->
       <article class="card">
         <a class="link" href="plk.html" aria-label="Öppna 10/11 Regler & Standarder – PLK 2025">
-          <img class="thumb" src="Ros_PLK.png" alt="">
-          <div class="overlay">
-            <div class="date">10/11</div>
-            <div class="title">Regler &amp; Standarder</div>
-            <div class="subtitle">PLK 2025</div>
+          <div class="media">
+            <img class="thumb" src="Ros_PLK.png" alt="" />
+            <div class="overlay">
+              <div class="date">10/11</div>
+              <div class="title">Regler &amp; Standarder</div>
+              <div class="subtitle">PLK 2025</div>
+            </div>
           </div>
           <div class="underline"></div>
         </a>
       </article>
     </main>
 
-    <img class="wave-full" src="Vagen_lang.png" alt="">
+    <!-- Långa vågen UNDER korten (kvar) -->
+    <img class="wave-full" src="Vagen_lang.png" alt="" />
+
     <footer>© INSU Yrkeshögskola</footer>
   </div>
 </body>
 </html>
-
