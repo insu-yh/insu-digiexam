@@ -1,110 +1,179 @@
-<head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hjälpmedel till Tentamen</title>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        /* Resten av din CSS här */
-    </style>
-</head>
-
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    margin: 0;
-    padding: 20px;
-}<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hjälpmedel till Tentamen</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        h2 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-        }
-        .section {
-            margin-bottom: 40px;
-        }
-        .section img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-        .section ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .section li {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            margin: 10px;
-            padding: 15px;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 400px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .section li a {
-            text-decoration: none;
-            color: #3498db;
-            font-size: 18px;
-            font-weight: bold;
-            display: block;
-        }
-        .section li a:hover {
-            color: #2c3e50;
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Material för digital examen – INSU</title>
+
+<style>
+  /* =========================
+     Typsnitt (Circular Pro)
+     =========================
+     Lägg filerna i /fonts/ och byt filnamn om de skiljer sig.
+     Jag konverterar gärna OTF → WOFF2 om du vill; WOFF2 ger bäst laddning.
+  */
+  @font-face {
+    font-family: "Circular Pro";
+    src: url("fonts/CircularPro-Medium.woff2") format("woff2"),
+         url("fonts/CircularPro-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Circular Pro";
+    src: url("fonts/CircularPro-Black.woff2") format("woff2"),
+         url("fonts/CircularPro-Black.woff") format("woff");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  :root{
+    --insu-yellow:#EDC73C;
+    --bg: rgba(237,199,60,.5); /* 50% av insu-gul */
+    --ink:#1E1E1E;
+    --muted:#3C3C3C;
+    --card:#fff;
+    --border:#E9E6DB;
+  }
+
+  /* Bas */
+  html,body{margin:0}
+  body{
+    font:16px/1.5 "Circular Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+  }
+
+  /* Ram/gul kant */
+  .frame{
+    max-width:1100px; margin:0 auto; background:#fff; min-height:100vh;
+    box-shadow:0 10px 30px rgba(0,0,0,.06);
+    border-left:8px solid var(--insu-yellow);
+    border-right:8px solid var(--insu-yellow);
+  }
+
+  header{padding:24px 20px 0; text-align:center}
+  .logo{height:54px}
+  .wave{display:block; margin:12px auto 18px; height:14px; object-fit:contain}
+
+  h1{
+    font-weight:800; /* Circular Pro Bold/Black */
+    font-size:clamp(22px, 3.2vw, 30px);
+    margin:8px 0 12px;
+    text-align:center;
+  }
+
+  .ingress{
+    font-weight:500; /* Circular Pro Medium */
+    max-width:820px; margin:0 auto; text-align:center;
+  }
+
+  .ingress p{margin:0 0 10px; color:#222}
+  .ingress p.note{font-size:15px; color:#444}
+
+  /* Kort-rad */
+  .grid{
+    display:grid; gap:28px;
+    grid-template-columns:1fr;
+    max-width:820px; margin:28px auto 60px; padding:0 20px;
+  }
+  @media (min-width:900px){ .grid{ grid-template-columns:1fr 1fr; } }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .thumb{
+    display:block; width:100%; aspect-ratio:16/9; object-fit:cover;
+    filter:saturate(.95);
+  }
+  .card-body{ padding:12px 16px 16px; position:relative; }
+  .underline{
+    height:4px; background:var(--insu-yellow); width:100%; margin-top:10px;
+  }
+
+  /* Övertext på bilden (datum/rubrik/underrad) */
+  .overlay{
+    position:absolute; left:16px; bottom:18px; right:16px;
+    color:#fff; text-shadow:0 2px 6px rgba(0,0,0,.35);
+    font-family:"Circular Pro", Arial, sans-serif;
+    pointer-events:none; /* ren visuell, själva kortet klickas */
+  }
+  .date{
+    font-weight:800; letter-spacing:.5px;
+    font-size:18px; margin:0 0 2px;
+  }
+  .title{
+    font-weight:800; font-size:22px; margin:0 0 2px;
+  }
+  .subtitle{
+    font-weight:500; font-size:13px; opacity:.95; margin:0;
+  }
+
+  /* Länka hela kortet */
+  .link{ display:block; color:inherit; text-decoration:none; position:relative; }
+  .link:focus-visible{ outline:3px solid var(--insu-yellow); outline-offset:3px; }
+
+  footer{padding:20px; text-align:center; color:#444; border-top:1px solid var(--border)}
+</style>
 </head>
 <body>
-    <h2>Hjälpmedel till Tentamen</h2>
+  <div class="frame">
 
-    <!-- Ros-tentan -->
-    <div class="section">
-        <img src="ros-tenta-bild.jpg" alt="Ros Tentamen">
-        <h3>Ros-tentan</h3>
-        <ul>
-            <li><a href="https://www.insu.se/wp-content/uploads/2025/11/ros-tenta1.pdf">Ros Tenta 1</a></li>
-            <li><a href="https://www.insu.se/wp-content/uploads/2025/11/ros-tenta2.pdf">Ros Tenta 2</a></li>
-            <li><a href="https://www.insu.se/wp-content/uploads/2025/11/ros-tenta3.pdf">Ros Tenta 3</a></li>
-        </ul>
-    </div>
+    <header>
+      <!-- Byt src till din logo-URL -->
+      <img class="logo" src="YH-logo.png" alt="INSU Yrkeshögskola" />
+      <img class="wave" src="Vagen_mini.png" alt="" />
+      <h1>Material för digital examen</h1>
+      <div class="ingress">
+        <p>Här hittar du det godkända kursmaterial som är tillåtet att använda under ditt digitala examinationstillfälle.
+           Välj den kurs du läser för att öppna de PDF-filer som är godkända som hjälpmedel.
+           Materialet öppnas direkt i webbläsaren och behöver inte laddas ner.</p>
+        <p class="note"><strong>Observera</strong> att endast materialet på denna sida är tillåtet under din digitala examen.
+           Annat kursmaterial eller externa hjälpmedel får inte användas.</p>
+        <p class="note">Vid tekniska problem eller frågor under examinationen kan du skriva direkt i chatten i DigiExam för support.</p>
+      </div>
+      <img class="wave" src="Vagen_mini.png" alt="" />
+    </header>
 
-    <!-- Placeholder -->
-    <div class="section">
-        <img src="placeholder-bild.jpg" alt="Placeholder">
-        <h3>Placeholder</h3>
-        <ul>
-            <li><a href="https://www.insu.se/wp-content/uploads/2025/11/placeholder1.pdf">Placeholder 1</a></li>
-            <li><a href="https://www.insu.se/wp-content/uploads/2025/11/placeholder2.pdf">Placeholder 2</a></li>
-            <li><a href="https://www.insu.se/wp-content/uploads/2025/11/placeholder3.pdf">Placeholder 3</a></li>
-        </ul>
-    </div>
+    <main class="grid">
+      <!-- Kort 1: KAV & PLV -->
+      <article class="card">
+        <a class="link" href="kav-plv.html" aria-label="Öppna 7/11 Regler & Standarder – KAV & PLV 2025">
+          <img class="thumb" src="RoS_KavPlv.png" alt="" />
+          <div class="card-body">
+            <div class="overlay">
+              <div class="date">7/11</div>
+              <div class="title">Regler &amp; Standarder</div>
+              <div class="subtitle">KAV &amp; PLV 2025</div>
+            </div>
+            <div class="underline"></div>
+          </div>
+        </a>
+      </article>
 
+      <!-- Kort 2: PLK -->
+      <article class="card">
+        <a class="link" href="plk.html" aria-label="Öppna 10/11 Regler & Standarder – PLK 2025">
+          <img class="thumb" src="Ros_PLK.png" alt="" />
+          <div class="card-body">
+            <div class="overlay">
+              <div class="date">10/11</div>
+              <div class="title">Regler &amp; Standarder</div>
+              <div class="subtitle">PLK 2025</div>
+            </div>
+            <div class="underline"></div>
+          </div>
+        </a>
+      </article>
+    </main>
+
+    <footer>© INSU Yrkeshögskola</footer>
+  </div>
 </body>
 </html>
