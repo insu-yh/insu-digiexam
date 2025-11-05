@@ -33,16 +33,22 @@
       color: #000;
     }
 
-    header {
+    /* --- Header och logotyp --- */
+    .insu-header {
       text-align: center;
-      padding: 20px;
+      padding: 25px 0 10px;
     }
 
+    .insu-header img {
+      height: 60px;
+    }
+
+    /* --- Banner --- */
     .banner {
       background-image: url("RoS_KavPlv.png");
       background-size: cover;
       background-position: center;
-      height: 180px;
+      height: 200px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -55,113 +61,4 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(255, 255, 255, 0.5);
-    }
-
-    .banner-content {
-      position: relative;
-      text-align: center;
-      color: #000;
-      z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
-      font-family: "CircularPro Medium", sans-serif;
-    }
-
-    .banner h1 {
-      font-family: "CircularPro Black", sans-serif;
-      font-size: 1.8rem;
-      margin-bottom: 8px;
-    }
-
-    .banner p {
-      font-size: 1rem;
-      line-height: 1.4;
-      margin: 0;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .pdf-list ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 30px;
-    }
-
-    .pdf-list li {
-      margin-bottom: 14px;
-    }
-
-    .pdf-list a {
-      display: block;
-      padding: 12px 18px;
-      background: #fff8dc;
-      border-left: 4px solid var(--insu-yellow);
-      text-decoration: none;
-      color: #000;
-      font-family: "CircularPro Medium", sans-serif;
-      border-radius: 4px;
-      transition: all 0.2s ease;
-    }
-
-    .pdf-list a:hover {
-      background: var(--insu-yellow);
-      color: #000;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin: 10px 20px;
-      text-decoration: none;
-      color: #000;
-      font-size: 0.95rem;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s ease;
-    }
-
-    .back-link:hover {
-      border-color: #000;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      padding: 20px;
-      color: #555;
-    }
-  </style>
-</head>
-<body>
-
-  <a href="mtr-resurser.html" class="back-link">⬅ Tillbaka till materialöversikt</a>
-
-  <header class="banner">
-    <div class="banner-content">
-      <h1>Regler &amp; Standarder – KAV &amp; PLV 2025</h1>
-      <p>Här hittar du det godkända materialet som är tillåtet under din digitala tentamen.</p>
-    </div>
-  </header>
-
-  <main class="pdf-list">
-    <h2>Godkänt material</h2>
-    <ul>
-      <li><a href="pdf/kavplv/BBR-kombinerad-MED-den-konsoliderade-kombinerad.pdf" target="_blank">BBR kombinerad med den konsoliderade (PDF)</a></li>
-      <li><a href="pdf/kavplv/Broschyr-Forenklad-tathetskontroll-med-luft-2021.pdf" target="_blank">Broschyr: Förenklad täthetskontroll med luft 2021 (PDF)</a></li>
-      <li><a href="pdf/kavplv/Foreskriften-Imkanal-2022.pdf" target="_blank">Föreskriften Imkanal 2022 (PDF)</a></li>
-      <li><a href="pdf/kavplv/Lathund-Imkanal-2022.pdf" target="_blank">Lathund Imkanal 2022 (PDF)</a></li>
-      <li><a href="pdf/kavplv/saker-vatten-byggtekniska-forutsattningar-2021-2.pdf" target="_blank">Säker Vatten – Byggtekniska förutsättningar 2021-2 (PDF)</a></li>
-      <li><a href="pdf/kavplv/saker-vatten-komprimerad.pdf" target="_blank">Säker Vatten – Komprimerad version (PDF)</a></li>
-    </ul>
-  </main>
-
-  <footer>
-    © 2025 INSU Yrkeshögskola – Digitalt tentamensmaterial
-  </footer>
-
-</body>
-</html>
-
+      background: rgba(237, 199, 60, 0.5); /* gul overlay, 5*
